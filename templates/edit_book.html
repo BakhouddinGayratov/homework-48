@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Book</title>
+</head>
+<body>
+
+<h2>Edit Book</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Title:</label>
+    {{ form.title }}
+
+    <br><br>
+
+    <label>Author:</label>
+    {{ form.author }}
+
+    <br><br>
+
+    <label>Price:</label>
+    {{ form.price }}
+
+    <br><br>
+
+    <label>Published year:</label>
+    {{ form.published_year }}
+
+    <br><br>
+
+    <button type="submit">Update</button>
+</form>
+
+<br>
+<a href="{% url 'book_list' %}">Cancel</a>
+
+</body>
+</html>
