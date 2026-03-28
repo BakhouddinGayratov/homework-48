@@ -13,12 +13,12 @@ def edit_book(request, pk):
     book = get_object_or_404(Book, pk=pk)
 
     if request.method == "POST":
-        form = BookForm(request.POST, instance=book)  # 🔥 MUHIM
+        form = BookForm(request.POST, instance=book)
         if form.is_valid():
             form.save()
             return redirect('book_list')
     else:
-        form = BookForm(instance=book)  # 🔥 MUHIM
+        form = BookForm(instance=book)
 
     return render(request, 'edit_book.html', {'form': form})
 
